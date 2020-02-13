@@ -59,21 +59,26 @@ public class MergeSort {
 		int leftIndex = 0;
 		int rightIndex = 0;
 		
+		
+		//Iterate through the 3 arrays. By the end, all 3 have been iterated through.
 		for (int retIndex = 0; retIndex < retArr.length; retIndex++) 
 		{
 			if (rightIndex > rightSize-1 || (leftIndex < leftSize && leftArr[leftIndex] < rightArr[rightIndex]))
 			{
+				//moves to the next element in the Left side array
 				retArr[retIndex] = leftArr[leftIndex];
 				leftIndex++;
 			}
 			else
 			{
+				//moves to the next element in the Right side array
 				retArr[retIndex] = rightArr[rightIndex];
 				rightIndex++;
 			}
 			
 		}
 		
+		//return the sorted array
 		return retArr;
 		
 	}
