@@ -4,7 +4,7 @@ package hw1.java;
 public class MergeSort 
 {
 	
-	// Divide function takes in an Array arr and an integer n, where arr is the array to be sorted
+	// mergeSort function takes in an Array arr and an integer n, where arr is the array to be sorted
 	// and n is the size of the array that needs to be sorted.
 	// Breaks down the array to very small arrays.
 	// It is assumed that Array arr has no null values., and that n is known

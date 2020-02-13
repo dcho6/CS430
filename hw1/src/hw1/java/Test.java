@@ -29,8 +29,18 @@ public class Test
 		//Mark end time
 		long endTime = System.nanoTime();
 		
+		InsertionSort is = new InsertionSort();
+		
+		long startTimeIS = System.nanoTime();	
+		
+		is.insertionSort(testArr);
+		
+		long endTimeIS = System.nanoTime();
+		
 		//Measures the time elapsed
 		long runTime = endTime - startTime;
+		
+		long runTimeIS = endTimeIS - startTimeIS;
 		
 		//print the sorted array
 		for (int x = 0; x < testArr.length; x++)
@@ -38,7 +48,14 @@ public class Test
 			System.out.printf(Integer.toString(sortedArr[x]) + " ");
 		}
 		//print the run time in nanoseconds
-		System.out.printf("\n Time elapsed is: " + Long.toString(runTime) + " ns");
+		System.out.printf("\n Time elapsed is: " + Long.toString(runTime) + " ns\n");
+		
+		for (int x = 0; x < testArr.length; x++)
+		{
+			System.out.printf(Integer.toString(sortedArr[x]) + " ");
+		}
+		
+		System.out.printf("\n Time elapsed is: " + Long.toString(runTimeIS) + " ns\n");
 		
 		scanner.close();
 	}
