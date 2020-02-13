@@ -1,4 +1,4 @@
 # CS430
-Team Funky Junkies
-David Cho - Seat # 12  
-Andrew Golucki - 
+Team Funky Junkies<br/>
+David Cho - Seat # 12<br/>
+Andrew Golucki - Seat #
