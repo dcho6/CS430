@@ -18,43 +18,43 @@ public class Test
 			testArr[x] = rand.nextInt(100);
 		}
 		
+		int[] testArrIS = testArr;
+		
 		MergeSort ms = new MergeSort();
-		
-		//used to measure runtime
-		long startTime = System.nanoTime();	
-		
-		//Merge Sort
-		int[] sortedArr = ms.mergeSort(testArr, testArr.length);
-		
-		//Mark end time
-		long endTime = System.nanoTime();
-		
 		InsertionSort is = new InsertionSort();
 		
-		long startTimeIS = System.nanoTime();	
+		//Merge Sort time and operation
+		long startTime = System.nanoTime();	
+		int[] sortedArr = ms.mergeSort(testArr, testArr.length);
+		long endTime = System.nanoTime();
 		
-		is.insertionSort(testArr);
-		
-		long endTimeIS = System.nanoTime();
-		
-		//Measures the time elapsed
+		//merge sort elapsed time
 		long runTime = endTime - startTime;
 		
+		//Insertion Sort time and operation
+		long startTimeIS = System.nanoTime();	
+		is.insertionSort(testArrIS);
+		long endTimeIS = System.nanoTime();
+		
+		//insertion sort elapsed time
 		long runTimeIS = endTimeIS - startTimeIS;
 		
-		//print the sorted array
+		//print the merge sorted array
+		System.out.printf("Merge Sort: \n ");
 		for (int x = 0; x < testArr.length; x++)
 		{
 			System.out.printf(Integer.toString(sortedArr[x]) + " ");
 		}
-		//print the run time in nanoseconds
-		System.out.printf("\n Time elapsed is: " + Long.toString(runTime) + " ns\n");
+		//print the merge sort time
+		System.out.printf("\n Time elapsed for Merge Sort is: " + Long.toString(runTime) + " ns\n");
 		
+		//print the insertion sorted array
+		System.out.printf("InsertionSort: \n ");
 		for (int x = 0; x < testArr.length; x++)
 		{
 			System.out.printf(Integer.toString(sortedArr[x]) + " ");
 		}
-		
+		//print the insertion sort time
 		System.out.printf("\n Time elapsed is: " + Long.toString(runTimeIS) + " ns\n");
 		
 		scanner.close();
