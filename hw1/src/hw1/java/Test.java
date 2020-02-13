@@ -1,19 +1,18 @@
+package hw1.java;
 import java.util.*;
 public class Test 
 {
 	public static void main(String [] args) 
 	{
 		Scanner scanner = new Scanner(System.in);
-		
+		//prompt for an amount of entries
 		System.out.printf("Please type how many entries you would like: ");
 		
 		String input = scanner.nextLine();
+		//fill an array with random integers
 		int rando = Integer.parseInt(input);
-		
 		Random rand = new Random();
-		
 		int[] testArr = new int[rando];
-		
 		for (int x = 0; x < testArr.length; x++) 
 		{
 			testArr[x] = rand.nextInt(100);
@@ -21,18 +20,26 @@ public class Test
 		
 		MergeSort ms = new MergeSort();
 		
+		//used to measure runtime
 		long startTime = System.nanoTime();	
-	
+		
+		//Merge Sort
 		int[] sortedArr = ms.mergeSort(testArr, testArr.length);
 		
+		//Mark end time
 		long endTime = System.nanoTime();
 		
+		//Measures the time elapsed
 		long runTime = endTime - startTime;
+		
+		//print the sorted array
 		for (int x = 0; x < testArr.length; x++)
 		{
 			System.out.printf(Integer.toString(sortedArr[x]) + " ");
 		}
+		//print the run time in nanoseconds
 		System.out.printf("\n Time elapsed is: " + Long.toString(runTime) + " ns");
+		
 		scanner.close();
 	}
 

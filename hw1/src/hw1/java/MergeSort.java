@@ -1,7 +1,8 @@
+package hw1.java;
 // Class that holds the Merge-Sort Algorithm
-// This part is done by David Cho - Seat 12
 
-public class MergeSort {
+public class MergeSort 
+{
 	
 	// Divide function takes in an Array arr and an integer n, where arr is the array to be sorted
 	// and n is the size of the array that needs to be sorted.
