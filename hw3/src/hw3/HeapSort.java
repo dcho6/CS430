@@ -11,14 +11,14 @@ public class HeapSort
 		int size = arr.length;
 		
 		//Convert the array of values into a heap
-		for (int index = size/2 - 1; index >=0; index--)
+		for (int index = size/2 - 1; index >= 0; index--)
 		{
 			reheapDown(arr, index, size);
 			
 		}
 		
 		//Sort the Array
-		for (int index = size - 1; index >=1; index--)
+		for (int index = size - 1; index >= 0; index--)
 		{
 			//Swap the root and the end
 			int x = arr[0];
@@ -41,7 +41,7 @@ public class HeapSort
 		int right = 2*index + 2;
 		
 		//Check if the left child is larger than the root node
-		if (arr[left] > arr[max] && left < size)
+		if (left < size && arr[left] > arr[max]) 
 		{
 			//if the child is larger, set the max to the left child index
 			max = left;
@@ -49,7 +49,7 @@ public class HeapSort
 		}
 		
 		//Check if the right child is larger than the root node
-		if (arr[right] > arr[max] && right < size)
+		if (right < size && arr[right] > arr[max])
 		{
 			//if the child is larger, set the max to the right child index
 			max = right;
