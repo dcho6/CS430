@@ -14,6 +14,7 @@ public class InsertionSort
 			int key = arr[x];
 			int y = x - 1;
 			
+			//iterate through backwards
 			while(y > 0 && arr[x] > key)
 			{
 				arr[y+1] = arr[y];
