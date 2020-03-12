@@ -31,7 +31,7 @@ public class HeapSort
 		}
 	}
 
-	//Reheap a subtree
+	//Used to form heaps
 	//index is a node in arr, size refers to the size of the array
 	void reheapDown(int arr[], int index, int size)
 	{
@@ -64,7 +64,7 @@ public class HeapSort
 			arr[index] = arr[max];
 			arr[max] = x;
 			
-			//Reheap the subtree
+			//Recursively reheap the subtree
 			reheapDown(arr, max, size);
 			
 		}

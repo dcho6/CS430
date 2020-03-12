@@ -27,11 +27,12 @@ public class Test
 		System.out.printf("\n");
 		
 		//create a copy of the unsorted array for the quick sort method
-		int[] testArrIS = testArrHS;
+		int[] testArrQS = testArrHS;
 		
 		//instantiate the sort classes
 		HeapSort hs = new HeapSort();
-		//InsertionSort is = new InsertionSort();
+		QuickSort qs = new QuickSort();
+		
 		
 		//Heap Sort time and operation
 		long startTimeHS = System.nanoTime();	
@@ -40,33 +41,33 @@ public class Test
 		
 		//Heap Sort elapsed time
 		long runTimeHS = endTimeHS - startTimeHS;
-/*		
-		//Insertion Sort time and operation
-		long startTimeIS = System.nanoTime();	
-		is.insertionSort(testArrIS);
-		long endTimeIS = System.nanoTime();
 		
-		//insertion sort elapsed time
-		long runTimeIS = endTimeIS - startTimeIS;
-*/		
-		//print the merge sorted array
-		System.out.printf("Heap Sort: ");
+		//Quick Sort time and operation
+		long startTimeQS = System.nanoTime();	
+		qs.quickSort(testArrQS, 0, testArrQS.length-1);
+		long endTimeQS = System.nanoTime();
+		
+		//quick sort elapsed time
+		long runTimeQS = endTimeQS - startTimeQS;
+	
+		//print the Heap sorted array
+		System.out.printf("Heap Sort:  ");
 		for (int x = 0; x < testArrHS.length; x++)
 		{
 			System.out.printf(Integer.toString(testArrHS[x]) + " ");
 		}
 		//print the heap sort time
-		System.out.printf("\nTime elapsed for Heap Sort is: " + Long.toString(runTimeHS) + " ns\n");
-/*		
-		//print the insertion sorted array
-		System.out.printf("InsertionSort: \n ");
-		for (int x = 0; x < testArrHS.length; x++)
+		System.out.printf("\n  Time elapsed for Heap Sort is: " + Long.toString(runTimeHS) + " ns\n");
+
+		//print the quick sorted array
+		System.out.printf("Quick Sort: ");
+		for (int x = 0; x < testArrQS.length; x++)
 		{
-			System.out.printf(Integer.toString(sortedArr[x]) + " ");
+			System.out.printf(Integer.toString(testArrQS[x]) + " ");
 		}
-		//print the insertion sort time
-		System.out.printf("\n Time elapsed is: " + Long.toString(runTimeIS) + " ns\n");
-*/		
+		//print the quick sort time
+		System.out.printf("\n  Time elapsed for Quick Sort is: " + Long.toString(runTimeQS) + " ns\n");
+
 		scanner.close();
 	}
 
