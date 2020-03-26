@@ -8,34 +8,34 @@ public class CountingSort {
 	void countingSort(int arr[], int bArr[], int k)
 	{
 		 
-		 //Create the scratch array to store counts. Every value in the array must be initialized to 0
-		 int cArr[] = new int[k+1];
-		 for (int i = 0; i <= k; i++) 
-		 {
-			 cArr[i] = 0;
+		//Create the scratch array to store counts. Every value in the array must be initialized to 0
+		int cArr[] = new int[k+1];
+		for (int i = 0; i <= k; i++) 
+		{
+			cArr[i] = 0;
 			 
-		 }
+		}
 		 
-		 //Keep track of the counts of each number. 
-		 for (int i = 0; i < arr.length; i++)
-		 {
-			 cArr[arr[i]]++;
+		//Keep track of the counts of each number. 
+		for (int i = 0; i < arr.length; i++)
+		{
+			cArr[arr[i]]++;
 			 
-		 }
+		}
 		 
-		 //Have cArr contain the number of elements less than or equal to i
-		 for (int i = 1; i <= k; i++) 
-		 {
-			 cArr[i] += cArr[i-1];
+		//Have cArr contain the number of elements less than or equal to i
+		for (int i = 1; i <= k; i++) 
+		{
+			cArr[i] += cArr[i - 1];
 			 
-		 }
+		}
 		 
-		 //build the output array
-		 for (int i = arr.length-1; i >= 0; i--)
-		 {
-			 bArr[cArr[arr[i]]-1] = arr[i];
-			 cArr[arr[i]]--;
-		 }
+		//build the output array
+		for (int i = arr.length - 1; i >= 0; i--)
+		{
+			bArr[cArr[arr[i]] - 1] = arr[i];
+			cArr[arr[i]]--;
+		}
 		
 	}
 	

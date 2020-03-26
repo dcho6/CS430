@@ -15,7 +15,7 @@ public class Test
 		int[] testArrCS = new int[rando];
 		for (int x = 0; x < testArrCS.length; x++) 
 		{
-			testArrCS[x] = rand.nextInt(10);
+			testArrCS[x] = rand.nextInt(999);
 		}
 		
 		//Print the unsorted array for comparison
@@ -31,6 +31,7 @@ public class Test
 		
 		//create an output array for Counting Sort
 		int[] sortedArrCS = new int[testArrCS.length];
+		int[] sortedArrRS = new int[testArrCS.length];
 		
 		//find the maximum value within the test array
 		int maxInArr = 0;
@@ -54,15 +55,15 @@ public class Test
 		
 		//Counting Sort elapsed time
 		long runTimeCS = endTimeCS - startTimeCS;
-/*
+
 		//Radix Sort time and operation
 		long startTimeRS = System.nanoTime();	
-		rs.radixSort(testArrRS);
+		rs.radixSort(testArrRS, sortedArrRS, maxInArr);
 		long endTimeRS = System.nanoTime();
 		
 		//radix sort elapsed time
 		long runTimeRS = endTimeRS - startTimeRS;
-*/
+
 		//print the Counting sorted array
 		System.out.printf("Counting Sort:  ");
 		for (int x = 0; x < sortedArrCS.length; x++)
@@ -71,7 +72,7 @@ public class Test
 		}
 		//print the counting sort time
 		System.out.printf("\n  Time elapsed for Counting Sort is: " + Long.toString(runTimeCS) + " ns\n");
-/*
+
 		//print the radix sorted array
 		System.out.printf("Radix Sort: ");
 		for (int x = 0; x < testArrRS.length; x++)
@@ -80,7 +81,7 @@ public class Test
 		}
 		//print the radix sort time
 		System.out.printf("\n  Time elapsed for Radix Sort is: " + Long.toString(runTimeRS) + " ns\n");
-*/
+
 		scanner.close();
 	}
 
