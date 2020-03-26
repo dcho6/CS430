@@ -1,4 +1,4 @@
 # CS430
 Team Funky Junkies<br/>
 David Cho - Seat # 12, A20384999<br/>
-Andrew Golucki - Seat #, A20321696
+Andrew Golucki - Seat #27, A20321696
