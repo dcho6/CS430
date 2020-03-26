@@ -10,31 +10,31 @@ public class CountingSort {
 		 
 		//Create the scratch array to store counts. Every value in the array must be initialized to 0
 		int cArr[] = new int[k+1];
-		for (int i = 0; i <= k; i++) 
+		for (int x = 0; x <= k; x++) 
 		{
-			cArr[i] = 0;
+			cArr[x] = 0;
 			 
 		}
 		 
 		//Keep track of the counts of each number. 
-		for (int i = 0; i < arr.length; i++)
+		for (int x = 0; x < arr.length; x++)
 		{
-			cArr[arr[i]]++;
+			cArr[arr[x]]++;
 			 
 		}
 		 
 		//Have cArr contain the number of elements less than or equal to i
-		for (int i = 1; i <= k; i++) 
+		for (int x = 1; x <= k; x++) 
 		{
-			cArr[i] += cArr[i - 1];
+			cArr[x] += cArr[x - 1];
 			 
 		}
 		 
 		//build the output array
-		for (int i = arr.length - 1; i >= 0; i--)
+		for (int x = arr.length - 1; x >= 0; x--)
 		{
-			bArr[cArr[arr[i]] - 1] = arr[i];
-			cArr[arr[i]]--;
+			bArr[cArr[arr[x]] - 1] = arr[x];
+			cArr[arr[x]]--;
 		}
 		
 	}

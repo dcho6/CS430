@@ -3,49 +3,58 @@ package hw4;
 
 public class RadixSort {
 
-	void radixSort(int arr[], int bArr[], int maxInArr) 
+	void radixSort(int arr[], int maxInArr) 
 	{
 		
 		//Do a counting sort on Array arr on each digit
 		for (int d = 1; maxInArr/d > 0; d *= 10)
 		{
-			radCountingSort(arr, bArr, d);
+			radCountingSort(arr, d);
 		}
 		
 	}
 	
 	//A new Counting Sort that sorts Arr according to the current digit
-	//arr is the array to be sorted, while bArr is the output array. k is the maximum value inside of arr
-	void radCountingSort(int arr[], int bArr[], int d)
+	//Arr itself is being modified, not the output array like in CountingSort.java
+	void radCountingSort(int arr[], int d)
 	{
+		//create a temporary output array.
+		int bArr[] = new int[arr.length];
+		
 		//Create the scratch array to store counts. Every value in the array must be initialized to 0
 		//Values range from [0,9] because it is per digit.
 		int cArr[] = new int[10];
-		for (int i = 0; i < 10; i++) 
+		for (int x = 0; x < 10; x++) 
 		{
-			cArr[i] = 0;
+			cArr[x] = 0;
 			 
 		}
 		 
 		//Keep track of the counts of each number. 
-		for (int i = 0; i < arr.length; i++)
+		for (int x = 0; x < arr.length; x++)
 		{
-			cArr[(arr[i]/d) % 10]++;
+			cArr[(arr[x]/d) % 10]++;
 			 
 		}
 		 
 		//Have cArr contain the number of elements less than or equal to i
-		for (int i = 1; i < 10; i++) 
+		for (int x = 1; x < 10; x++) 
 		{
-			cArr[i] += cArr[i - 1];
+			cArr[x] += cArr[x - 1];
 			 
 		}
 		 
 		//build the output array
-		for (int i = arr.length - 1; i >= 0; i--)
+		for (int x = arr.length - 1; x >= 0; x--)
 		{
-			bArr[cArr[(arr[i]/d) % 10] - 1] = arr[i];
-			cArr[(arr[i]/d) % 10]--;
+			bArr[cArr[(arr[x]/d) % 10] - 1] = arr[x];
+			cArr[(arr[x]/d) % 10]--;
+		}
+		
+		//replace arr's values with the output array's
+		for (int x = 0; x < arr.length; x++)
+		{
+			arr[x] = bArr[x];
 		}
 		
 	}

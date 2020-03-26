@@ -31,15 +31,14 @@ public class Test
 		
 		//create an output array for Counting Sort
 		int[] sortedArrCS = new int[testArrCS.length];
-		int[] sortedArrRS = new int[testArrCS.length];
 		
 		//find the maximum value within the test array
 		int maxInArr = 0;
-		for (int i = 0; i < testArrCS.length; i++) 
+		for (int x = 0; x < testArrCS.length; x++) 
 		{
-			if (testArrCS[i] > maxInArr)
+			if (testArrCS[x] > maxInArr)
 			{
-				maxInArr = testArrCS[i];
+				maxInArr = testArrCS[x];
 			}
 		}
 		
@@ -58,7 +57,7 @@ public class Test
 
 		//Radix Sort time and operation
 		long startTimeRS = System.nanoTime();	
-		rs.radixSort(testArrRS, sortedArrRS, maxInArr);
+		rs.radixSort(testArrRS, maxInArr);
 		long endTimeRS = System.nanoTime();
 		
 		//radix sort elapsed time
